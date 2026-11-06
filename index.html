@@ -1,37 +1,38 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b0b0b">
+<meta name="theme-color" content="#090909">
 <meta name="description" content="BOUVRÉ — Contemporary luxury streetwear. The New Uniform.">
-<title>BOUVRÉ — The New Uniform</title>
+<title>BOUVRÉ | The New Uniform</title>
+<link rel="icon" href="bv-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="bv-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --black:#0b0b0b;
+  --black:#090909;
   --ivory:#eee9e0;
-  --cream:#d5c8b8;
-  --white:#f7f4ee;
-  --line:rgba(255,255,255,.18);
+  --cream:#e7ded1;
+  --muted:#bdb6ad;
 }
 * {box-sizing:border-box}
 html {scroll-behavior:smooth}
 body {
   margin:0;
   background:var(--black);
-  color:var(--white);
+  color:#f6f2ec;
   font-family:"DM Sans",Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
+a {color:inherit;text-decoration:none}
 button,input {font:inherit}
 button {cursor:pointer}
-a {color:inherit;text-decoration:none}
-img {display:block;width:100%}
+img {display:block;max-width:100%}
 .serif {font-family:"Cormorant Garamond",Georgia,serif}
 .eyebrow {
   font-size:10px;
@@ -39,22 +40,28 @@ img {display:block;width:100%}
   text-transform:uppercase;
 }
 .site-header {
-  height:76px;
   position:relative;
-  z-index:50;
-  background:rgba(9,9,9,.98);
-  border-bottom:1px solid var(--line);
+  z-index:20;
+  height:78px;
+  background:#090909;
+  border-bottom:1px solid #252525;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 4%;
 }
 .monogram {
-  font-family:Georgia,serif;
-  font-size:34px;
-  letter-spacing:-8px;
-  padding-right:8px;
-  line-height:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:58px;
+  height:58px;
+  flex-shrink:0;
+}
+.monogram img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
 }
 .header-center {
   position:absolute;
@@ -64,37 +71,38 @@ img {display:block;width:100%}
 }
 .wordmark {
   display:block;
-  font-family:"Cormorant Garamond",serif;
-  font-size:29px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:30px;
+  font-weight:500;
   letter-spacing:9px;
-  line-height:1;
   white-space:nowrap;
+  line-height:1;
 }
 .desktop-nav {
   display:flex;
   justify-content:center;
-  gap:35px;
-  margin-top:10px;
+  gap:34px;
+  margin-top:11px;
 }
 .desktop-nav a {
   font-size:10px;
   letter-spacing:1.2px;
-  transition:opacity .25s;
 }
-.desktop-nav a:hover {opacity:.5}
+.desktop-nav a:hover,.footer a:hover {opacity:.65}
 .header-actions {
   display:flex;
   align-items:center;
-  gap:22px;
+  gap:20px;
 }
 .icon-button {
   background:none;
-  border:0;
   color:inherit;
+  border:0;
   padding:4px;
-  display:inline-flex;
+  display:flex;
   align-items:center;
   justify-content:center;
+  position:relative;
 }
 .icon-button svg {
   width:21px;
@@ -103,74 +111,69 @@ img {display:block;width:100%}
   stroke:currentColor;
   stroke-width:1.5;
 }
-.bag-button {position:relative}
 .bag-count {
   position:absolute;
-  top:-6px;
+  top:-7px;
   right:-8px;
-  font-size:9px;
+  font-size:10px;
 }
-.mobile-toggle {display:none}
-.mobile-menu {
-  display:none;
-  background:#111;
-  border-bottom:1px solid var(--line);
-  padding:20px 5%;
-}
-.mobile-menu.open {display:flex;flex-direction:column;gap:23px}
-.mobile-menu a {font-size:12px;letter-spacing:2px}
+.mobile-toggle,.mobile-menu {display:none}
 
-/* HERO */
+/* MAIN HERO */
 .hero {
-  min-height:650px;
-  height:78vh;
-  max-height:920px;
   position:relative;
+  min-height:620px;
+  height:78vh;
+  max-height:950px;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.48) 42%,rgba(0,0,0,.05) 100%),
-    url("images/hero.png") center 35%/cover no-repeat,
-    #24211f;
+  background-color:#211e1c;
+  background-image:
+    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.45) 48%,rgba(0,0,0,.04)),
+    url("images/hero.png");
+  background-size:cover;
+  background-position:center;
 }
 .hero-content {
   position:relative;
   z-index:2;
   padding:0 4.5%;
-  max-width:720px;
 }
 .hero h1 {
-  font-family:"Cormorant Garamond",serif;
+  font-family:"Cormorant Garamond",Georgia,serif;
   font-style:italic;
+  font-size:clamp(70px,9vw,145px);
   font-weight:400;
-  font-size:clamp(74px,9vw,145px);
-  line-height:.78;
   letter-spacing:-4px;
-  margin:30px 0;
+  line-height:.79;
+  margin:32px 0;
 }
 .hero-description {
   font-size:14px;
   line-height:1.7;
-  max-width:300px;
-  color:#ddd8d1;
+  max-width:310px;
+  color:#e2ddd6;
   margin-bottom:30px;
 }
 .outline-button {
   display:inline-flex;
+  gap:30px;
   align-items:center;
-  gap:25px;
-  padding:15px 24px;
-  border:1px solid rgba(255,255,255,.65);
+  padding:15px 22px;
+  border:1px solid #bcb8b3;
   background:transparent;
   color:white;
   font-size:11px;
   letter-spacing:1px;
-  transition:background .25s,color .25s;
+  transition:.25s;
 }
-.outline-button:hover {background:white;color:black}
+.outline-button:hover {
+  background:white;
+  color:black;
+}
 .hero-indicator {
   position:absolute;
-  bottom:28px;
+  bottom:25px;
   left:50%;
   transform:translateX(-50%);
   display:flex;
@@ -179,53 +182,53 @@ img {display:block;width:100%}
 .hero-indicator span {
   width:25px;
   height:2px;
-  background:rgba(255,255,255,.4);
+  background:#777;
 }
 .hero-indicator span:first-child {background:white}
 
-/* EDITORIAL TILES */
+/* THREE EDITORIAL PANELS */
 .editorial-grid {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:12px;
   padding:12px;
 }
 .editorial-card {
+  height:250px;
   position:relative;
-  height:260px;
   overflow:hidden;
   background:#242321;
   display:flex;
   align-items:flex-end;
 }
-.editorial-card::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 70%);
-  z-index:1;
-}
 .editorial-card img {
   position:absolute;
   inset:0;
+  width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .7s;
+  transition:transform .6s;
 }
 .editorial-card:hover img {transform:scale(1.06)}
+.editorial-card:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 25%,rgba(0,0,0,.82));
+}
 .editorial-content {
   position:relative;
   z-index:2;
   width:100%;
-  padding:28px;
+  padding:26px;
   display:flex;
+  align-items:end;
   justify-content:space-between;
-  align-items:flex-end;
 }
 .editorial-content h2 {
   font-family:"Cormorant Garamond",serif;
+  font-size:28px;
   font-weight:400;
-  font-size:27px;
   margin:0 0 5px;
 }
 .editorial-content p {
@@ -233,7 +236,7 @@ img {display:block;width:100%}
   letter-spacing:1px;
   margin:0;
 }
-.arrow {font-size:24px;font-weight:300}
+.arrow {font-size:25px}
 
 /* BRAND STORY */
 .brand-story {
@@ -241,39 +244,39 @@ img {display:block;width:100%}
   min-height:400px;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(90deg,#090909 0%,rgba(0,0,0,.92) 30%,rgba(0,0,0,.08) 100%),
-    url("images/story.png") center/cover no-repeat,
-    #222;
+  background-color:#1b1a19;
+  background-image:
+    linear-gradient(90deg,#090909 0%,rgba(0,0,0,.93) 32%,rgba(0,0,0,.1)),
+    url("images/story.png");
+  background-size:cover;
+  background-position:center;
 }
 .story-content {
-  padding:65px 6%;
-  position:relative;
-  z-index:1;
-  max-width:540px;
+  padding:70px 6%;
+  max-width:560px;
 }
 .story-content h2 {
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(60px,7vw,100px);
   font-weight:400;
-  margin:15px 0;
   line-height:1;
+  margin:15px 0;
 }
 .story-content p:not(.eyebrow) {
   font-size:14px;
   line-height:1.8;
-  color:#d4d0ca;
+  color:#d2cdc7;
 }
 .text-link {
   display:inline-block;
-  margin-top:24px;
+  margin-top:22px;
   font-size:12px;
   letter-spacing:1px;
-  border-bottom:1px solid currentColor;
-  padding-bottom:5px;
+  border-bottom:1px solid;
+  padding-bottom:6px;
 }
 
-/* PRODUCTS */
+/* LATEST DROP */
 .products-section {
   background:var(--ivory);
   color:#111;
@@ -282,15 +285,15 @@ img {display:block;width:100%}
 .section-heading {
   display:flex;
   justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:25px;
+  align-items:end;
+  margin-bottom:26px;
 }
 .section-heading h2 {
   font-family:"Cormorant Garamond",serif;
+  font-size:clamp(48px,6vw,78px);
   font-weight:400;
-  font-size:clamp(48px,6vw,76px);
-  margin:8px 0 0;
-  line-height:.95;
+  line-height:1;
+  margin:7px 0 0;
 }
 .section-heading .eyebrow {margin:0}
 .view-all {
@@ -304,22 +307,22 @@ img {display:block;width:100%}
   gap:18px;
 }
 .product-image {
-  position:relative;
-  overflow:hidden;
   aspect-ratio:3/4;
-  background:#bcb7b0;
+  background:#bcb6af;
+  overflow:hidden;
 }
 .product-image img {
+  width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .6s;
+  transition:transform .5s;
 }
-.product-card:hover .product-image img {transform:scale(1.04)}
+.product-card:hover img {transform:scale(1.04)}
 .product-info {
   display:flex;
   justify-content:space-between;
   gap:8px;
-  padding-top:14px;
+  padding-top:13px;
 }
 .product-name {
   font-size:11px;
@@ -330,68 +333,67 @@ img {display:block;width:100%}
 .add-button {
   border:0;
   background:none;
-  font-size:23px;
-  line-height:1;
-  align-self:flex-start;
+  font-size:25px;
   color:#111;
+  line-height:1;
 }
 .product-note {
-  margin-top:24px;
   font-size:11px;
   color:#666;
+  margin-top:25px;
 }
 
 /* NEWSLETTER */
 .newsletter {
-  padding:80px 20px 95px;
   text-align:center;
+  padding:85px 20px 100px;
   background:
-    radial-gradient(ellipse at 10% 110%,#383533 0%,transparent 40%),
-    radial-gradient(ellipse at 90% -30%,#292727 0%,transparent 45%),
+    radial-gradient(ellipse at 5% 100%,#383533,transparent 45%),
+    radial-gradient(ellipse at 95% 0%,#292727,transparent 45%),
     #090909;
 }
 .newsletter h2 {
   font-family:"Cormorant Garamond",serif;
-  font-size:32px;
+  font-size:34px;
   font-weight:400;
   letter-spacing:7px;
-  margin:0 0 14px;
+  margin:0 0 15px;
 }
 .newsletter p {
-  color:#bbb6b0;
   font-size:12px;
-  line-height:1.7;
+  color:#bbb5ae;
+  line-height:1.8;
 }
 .newsletter-form {
   display:flex;
   max-width:430px;
   margin:30px auto 0;
-  border:1px solid #666;
+  border:1px solid #777;
 }
 .newsletter-form input {
   flex:1;
   min-width:0;
+  background:transparent;
   border:0;
   outline:none;
-  background:transparent;
-  color:white;
   padding:17px;
+  color:white;
   font-size:12px;
 }
 .newsletter-form button {
   background:none;
-  color:white;
   border:0;
+  color:white;
   padding:0 20px;
-  font-size:23px;
+  font-size:24px;
 }
-.form-message {min-height:18px}
+.form-message {min-height:20px}
 
 /* FOOTER */
 .footer {
-  border-top:1px solid var(--line);
-  padding:55px 5% 25px;
   background:#080808;
+  border-top:1px solid #292929;
+  padding:55px 5% 25px;
 }
 .footer-top {
   display:flex;
@@ -413,81 +415,88 @@ img {display:block;width:100%}
 }
 .footer-links a {
   display:block;
-  color:#aaa;
   font-size:12px;
+  color:#aaa;
   margin-bottom:13px;
 }
 .footer-bottom {
   display:flex;
   justify-content:space-between;
-  border-top:1px solid var(--line);
+  gap:15px;
+  border-top:1px solid #292929;
   margin-top:65px;
   padding-top:22px;
-  color:#888;
   font-size:10px;
+  color:#888;
   letter-spacing:1px;
 }
-
-/* TOAST */
 .toast {
   position:fixed;
+  z-index:100;
   bottom:25px;
   left:50%;
   transform:translate(-50%,30px);
-  background:#eee9e0;
+  background:var(--ivory);
   color:#111;
-  padding:14px 24px;
+  padding:15px 25px;
   font-size:12px;
   opacity:0;
   pointer-events:none;
-  transition:opacity .25s,transform .25s;
-  z-index:100;
-  max-width:90%;
+  transition:.25s;
   text-align:center;
+  max-width:90%;
 }
 .toast.show {
   opacity:1;
   transform:translate(-50%,0);
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 @media(max-width:800px) {
   .site-header {height:70px;padding:0 5%}
-  .desktop-nav {display:none}
+  .monogram {width:48px;height:48px}
   .wordmark {font-size:25px;letter-spacing:6px}
-  .monogram {font-size:27px}
+  .desktop-nav {display:none}
   .header-actions {gap:12px}
-  .header-actions .account-icon,
-  .header-actions .search-icon {display:none}
-  .mobile-toggle {display:inline-flex}
+  .search-icon,.account-icon {display:none}
+  .mobile-toggle {display:flex}
+  .mobile-menu.open {
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    padding:25px 6%;
+    background:#111;
+    border-bottom:1px solid #333;
+  }
+  .mobile-menu a {font-size:12px;letter-spacing:2px}
   .hero {
-    min-height:640px;
+    min-height:620px;
     height:82svh;
-    background-position:center,62% center;
+    background-position:62% center;
   }
   .hero-content {padding:0 6%}
-  .hero h1 {font-size:clamp(65px,13vw,100px)}
+  .hero h1 {font-size:clamp(65px,12vw,100px)}
   .editorial-grid {gap:8px;padding:8px}
   .editorial-card {height:220px}
   .editorial-content {padding:15px}
   .editorial-content h2 {font-size:22px}
   .editorial-content p {font-size:8px}
-  .brand-story {min-height:400px}
-  .product-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}
+  .product-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:25px 12px;
+  }
   .products-section {padding:55px 5%}
   .footer-top {flex-direction:column}
-  .footer-links {gap:55px}
 }
 @media(max-width:540px) {
+  .monogram {width:43px;height:43px}
+  .wordmark {font-size:23px;letter-spacing:5px}
   .hero {min-height:560px}
   .hero h1 {letter-spacing:-2px}
   .hero-description {font-size:12px}
   .editorial-grid {grid-template-columns:1fr}
   .editorial-card {height:185px}
   .editorial-content h2 {font-size:29px}
-  .brand-story {
-    background-position:center,65% center;
-  }
   .story-content {padding:70px 6%}
   .story-content h2 {font-size:65px}
   .section-heading h2 {font-size:49px}
@@ -496,11 +505,11 @@ img {display:block;width:100%}
   .product-name {font-size:10px}
   .newsletter h2 {font-size:25px;letter-spacing:4px}
   .footer-links {gap:35px;flex-wrap:wrap}
-  .footer-bottom {flex-direction:column;gap:10px}
+  .footer-bottom {flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce) {
   html {scroll-behavior:auto}
-  *,*::before,*::after {transition:none!important}
+  *,*:before,*:after {transition:none!important}
 }
 </style>
 </head>
@@ -508,10 +517,12 @@ img {display:block;width:100%}
 <body>
 
 <header class="site-header">
-  <a class="monogram" href="#" aria-label="BOUVRÉ home">BV</a>
+  <a class="monogram" href="/" aria-label="BOUVRÉ homepage">
+    <img src="bv-logo.png" alt="BOUVRÉ BV monogram">
+  </a>
 
   <div class="header-center">
-    <a href="#" class="wordmark">BOUVRÉ</a>
+    <a href="/" class="wordmark">BOUVRÉ</a>
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="#latest">SHOP</a>
       <a href="#collections">COLLECTIONS</a>
@@ -521,18 +532,32 @@ img {display:block;width:100%}
   </div>
 
   <div class="header-actions">
-    <button class="icon-button search-icon" aria-label="Search" onclick="showToast('Search is coming soon')">
-      <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.5"/><path d="m16.5 16.5 5 5"/></svg>
+    <button class="icon-button search-icon" aria-label="Search" onclick="showToast('Search coming soon')">
+      <svg viewBox="0 0 24 24">
+        <circle cx="10.8" cy="10.8" r="7.5"/>
+        <path d="m16.5 16.5 5 5"/>
+      </svg>
     </button>
-    <button class="icon-button account-icon" aria-label="Account" onclick="showToast('Accounts are coming soon')">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3z"/></svg>
+
+    <button class="icon-button account-icon" aria-label="Account" onclick="showToast('Accounts coming soon')">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 22v-3a8 8 0 0 1 16 0v3z"/>
+      </svg>
     </button>
+
     <button class="icon-button bag-button" aria-label="Shopping bag" onclick="showToast('Online checkout is not yet available')">
-      <svg viewBox="0 0 24 24"><path d="M3 8h18l-1.5 13h-15z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>
+      <svg viewBox="0 0 24 24">
+        <path d="M3 8h18l-1.5 13h-15z"/>
+        <path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+      </svg>
       <span class="bag-count">0</span>
     </button>
+
     <button class="icon-button mobile-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
-      <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      <svg viewBox="0 0 24 24">
+        <path d="M3 7h18M3 12h18M3 17h18"/>
+      </svg>
     </button>
   </div>
 </header>
@@ -563,9 +588,8 @@ img {display:block;width:100%}
 </section>
 
 <section class="editorial-grid" id="collections">
-
   <a class="editorial-card" href="#latest">
-    <img src="images/essentials.png" alt="Minimalist black streetwear essentials" loading="lazy">
+    <img src="images/essentials.png" alt="BOUVRÉ minimalist streetwear essentials" loading="lazy">
     <div class="editorial-content">
       <div>
         <h2>ESSENTIALS</h2>
@@ -576,7 +600,7 @@ img {display:block;width:100%}
   </a>
 
   <a class="editorial-card" href="#latest">
-    <img src="images/collections.png" alt="Close-up of premium BOUVRÉ clothing" loading="lazy">
+    <img src="images/collections.png" alt="Premium BOUVRÉ clothing details" loading="lazy">
     <div class="editorial-content">
       <div>
         <h2>COLLECTIONS</h2>
@@ -587,7 +611,7 @@ img {display:block;width:100%}
   </a>
 
   <a class="editorial-card" href="#journal">
-    <img src="images/journal.png" alt="Brutalist architectural editorial" loading="lazy">
+    <img src="images/journal.png" alt="BOUVRÉ architectural editorial" loading="lazy">
     <div class="editorial-content">
       <div>
         <h2>JOURNAL</h2>
@@ -596,7 +620,6 @@ img {display:block;width:100%}
       <span class="arrow">⟶</span>
     </div>
   </a>
-
 </section>
 
 <section class="brand-story" id="about">
@@ -624,7 +647,7 @@ img {display:block;width:100%}
 
     <article class="product-card">
       <div class="product-image">
-        <img src="images/hoodie.png" alt="BOUVRÉ Signature black oversized hoodie" loading="lazy">
+        <img src="images/hoodie.png" alt="BOUVRÉ Signature Hoodie" loading="lazy">
       </div>
       <div class="product-info">
         <div>
@@ -637,7 +660,7 @@ img {display:block;width:100%}
 
     <article class="product-card">
       <div class="product-image">
-        <img src="images/tee.png" alt="BOUVRÉ Essential ivory oversized tee" loading="lazy">
+        <img src="images/tee.png" alt="BOUVRÉ Essential Tee" loading="lazy">
       </div>
       <div class="product-info">
         <div>
@@ -650,7 +673,7 @@ img {display:block;width:100%}
 
     <article class="product-card">
       <div class="product-image">
-        <img src="images/cargo.png" alt="BOUVRÉ black cargo pants" loading="lazy">
+        <img src="images/cargo.png" alt="BOUVRÉ Cargo Pants" loading="lazy">
       </div>
       <div class="product-info">
         <div>
@@ -663,7 +686,7 @@ img {display:block;width:100%}
 
     <article class="product-card">
       <div class="product-image">
-        <img src="images/cap.png" alt="BOUVRÉ Signature black cap" loading="lazy">
+        <img src="images/cap.png" alt="BOUVRÉ Signature Cap" loading="lazy">
       </div>
       <div class="product-info">
         <div>
@@ -677,7 +700,7 @@ img {display:block;width:100%}
   </div>
 
   <p class="product-note">
-    Collection preview. Products, availability and prices are subject to change.
+    Collection preview. Prices and availability are subject to change.
   </p>
 </section>
 
@@ -687,8 +710,9 @@ img {display:block;width:100%}
     Be the first to know about new collections,<br>
     exclusive drops and brand updates.
   </p>
+
   <form class="newsletter-form" id="newsletterForm">
-    <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required>
+    <input type="email" placeholder="Enter your email" aria-label="Email address" required>
     <button type="submit" aria-label="Join mailing list">⟶</button>
   </form>
   <p class="form-message" id="formMessage" aria-live="polite"></p>
@@ -711,7 +735,6 @@ img {display:block;width:100%}
       </div>
       <div>
         <h3>INFORMATION</h3>
-        <a href="mailto:contact@bouvre.com">Contact</a>
         <a href="#journal">Journal</a>
         <a href="#latest">Latest Drop</a>
       </div>
@@ -726,8 +749,8 @@ img {display:block;width:100%}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const yearElement = document.getElementById("year");
-yearElement.textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
 let toastTimeout;
 
