@@ -2,12 +2,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOUVRÉ | Luxury Streetwear</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="description" content="BOUVRÉ — Contemporary luxury streetwear. The New Uniform.">
+<title>BOUVRÉ — The New Uniform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#0b0b0b;
+  --ivory:#eee9e0;
+  --cream:#d5c8b8;
+  --white:#f7f4ee;
+  --line:rgba(255,255,255,.18);
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--black);
+  color:var(--white);
+  font-family:"DM Sans",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+button,input {font:inherit}
+button {cursor:pointer}
+a {color:inherit;text-decoration:none}
+img {display:block;width:100%}
+.serif {font-family:"Cormorant Garamond",Georgia,serif}
+.eyebrow {
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+}
+.site-header {
+  height:76px;
+  position:relative;
+  z-index:50;
+  background:rgba(9,9,9,.98);
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 4%;
+}
+.monogram {
+  font-family:Georgia,serif;
+  font-size:34px;
+  letter-spacing:-8px;
+  padding-right:8px;
+  line-height:1;
+}
+.header-center {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+}
+.wordmark {
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:29px;
+  letter-spacing:9px;
+  line-height:1;
+  white-space:nowrap;
+}
+.desktop-nav {
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  margin-top:10px;
+}
+.desktop-nav a {
+  font-size:10px;
+  letter-spacing:1.2px;
+  transition:opacity .25s;
+}
+.desktop-nav a:hover {opacity:.5}
+.header-actions {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.icon-button {
+  background:none;
+  border:0;
+  color:inherit;
+  padding:4px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.icon-button svg {
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.5;
+}
+.bag-button {position:relative}
+.bag-count {
+  position:absolute;
+  top:-6px;
+  right:-8px;
+  font-size:9px;
+}
+.mobile-toggle {display:none}
+.mobile-menu {
+  display:none;
+  background:#111;
+  border-bottom:1px solid var(--line);
+  padding:20px 5%;
+}
+.mobile-menu.open {display:flex;flex-direction:column;gap:23px}
+.mobile-menu a {font-size:12px;letter-spacing:2px}
+
+/* HERO */
+.hero {
+  min-height:650px;
+  height:78vh;
+  max-height:920px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.48) 42%,rgba(0,0,0,.05) 100%),
+    url("images/hero.png") center 35%/cover no-repeat,
+    #24211f;
+}
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding:0 4.5%;
+  max-width:720px;
+}
+.hero h1 {
+  font-family:"Cormorant Garamond",serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(74px,9vw,145px);
+  line-height:.78;
+  letter-spacing:-4px;
+  margin:30px 0;
+}
+.hero-description {
+  font-size:14px;
+  line-height:1.7;
+  max-width:300px;
+  color:#ddd8d1;
+  margin-bottom:30px;
+}
+.outline-button {
+  display:inline-flex;
+  align-items:center;
+  gap:25px;
+  padding:15px 24px;
+  border:1px solid rgba(255,255,255,.65);
+  background:transparent;
+  color:white;
+  font-size:11px;
+  letter-spacing:1px;
+  transition:background .25s,color .25s;
+}
+.outline-button:hover {background:white;color:black}
+.hero-indicator {
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:7px;
+}
+.hero-indicator span {
+  width:25px;
+  height:2px;
+  background:rgba(255,255,255,.4);
+}
+.hero-indicator span:first-child {background:white}
+
+/* EDITORIAL TILES */
+.editorial-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  padding:12px;
+}
+.editorial-card {
+  position:relative;
+  height:260px;
+  overflow:hidden;
+  background:#242321;
+  display:flex;
+  align-items:flex-end;
+}
+.editorial-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 70%);
+  z-index:1;
+}
+.editorial-card img {
+  position:absolute;
+  inset:0;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s;
+}
+.editorial-card:hover img {transform:scale(1.06)}
+.editorial-content {
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+.editorial-content h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-weight:400;
+  font-size:27px;
+  margin:0 0 5px;
+}
+.editorial-content p {
+  font-size:10px;
+  letter-spacing:1px;
+  margin:0;
+}
+.arrow {font-size:24px;font-weight:300}
+
+/* BRAND STORY */
+.brand-story {
+  position:relative;
+  min-height:400px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,#090909 0%,rgba(0,0,0,.92) 30%,rgba(0,0,0,.08) 100%),
+    url("images/story.png") center/cover no-repeat,
+    #222;
+}
+.story-content {
+  padding:65px 6%;
+  position:relative;
+  z-index:1;
+  max-width:540px;
+}
+.story-content h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(60px,7vw,100px);
+  font-weight:400;
+  margin:15px 0;
+  line-height:1;
+}
+.story-content p:not(.eyebrow) {
+  font-size:14px;
+  line-height:1.8;
+  color:#d4d0ca;
+}
+.text-link {
+  display:inline-block;
+  margin-top:24px;
+  font-size:12px;
+  letter-spacing:1px;
+  border-bottom:1px solid currentColor;
+  padding-bottom:5px;
+}
+
+/* PRODUCTS */
+.products-section {
+  background:var(--ivory);
+  color:#111;
+  padding:65px 4.5% 75px;
+}
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:25px;
+}
+.section-heading h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-weight:400;
+  font-size:clamp(48px,6vw,76px);
+  margin:8px 0 0;
+  line-height:.95;
+}
+.section-heading .eyebrow {margin:0}
+.view-all {
+  font-size:11px;
+  letter-spacing:1px;
+  padding-bottom:8px;
+}
+.product-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+.product-image {
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:3/4;
+  background:#bcb7b0;
+}
+.product-image img {
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s;
+}
+.product-card:hover .product-image img {transform:scale(1.04)}
+.product-info {
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  padding-top:14px;
+}
+.product-name {
+  font-size:11px;
+  letter-spacing:.5px;
+  margin:0 0 6px;
+}
+.product-price {font-size:12px;margin:0}
+.add-button {
+  border:0;
+  background:none;
+  font-size:23px;
+  line-height:1;
+  align-self:flex-start;
+  color:#111;
+}
+.product-note {
+  margin-top:24px;
+  font-size:11px;
+  color:#666;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  padding:80px 20px 95px;
+  text-align:center;
+  background:
+    radial-gradient(ellipse at 10% 110%,#383533 0%,transparent 40%),
+    radial-gradient(ellipse at 90% -30%,#292727 0%,transparent 45%),
+    #090909;
+}
+.newsletter h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:32px;
+  font-weight:400;
+  letter-spacing:7px;
+  margin:0 0 14px;
+}
+.newsletter p {
+  color:#bbb6b0;
+  font-size:12px;
+  line-height:1.7;
+}
+.newsletter-form {
+  display:flex;
+  max-width:430px;
+  margin:30px auto 0;
+  border:1px solid #666;
+}
+.newsletter-form input {
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:none;
+  background:transparent;
+  color:white;
+  padding:17px;
+  font-size:12px;
+}
+.newsletter-form button {
+  background:none;
+  color:white;
+  border:0;
+  padding:0 20px;
+  font-size:23px;
+}
+.form-message {min-height:18px}
+
+/* FOOTER */
+.footer {
+  border-top:1px solid var(--line);
+  padding:55px 5% 25px;
+  background:#080808;
+}
+.footer-top {
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+}
+.footer-brand .wordmark {font-size:30px}
+.footer-brand p {
+  font-size:11px;
+  color:#aaa;
+  margin-top:18px;
+}
+.footer-links {display:flex;gap:75px}
+.footer-links h3 {
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:500;
+  margin:0 0 20px;
+}
+.footer-links a {
+  display:block;
+  color:#aaa;
+  font-size:12px;
+  margin-bottom:13px;
+}
+.footer-bottom {
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid var(--line);
+  margin-top:65px;
+  padding-top:22px;
+  color:#888;
+  font-size:10px;
+  letter-spacing:1px;
+}
+
+/* TOAST */
+.toast {
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,30px);
+  background:#eee9e0;
+  color:#111;
+  padding:14px 24px;
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s,transform .25s;
+  z-index:100;
+  max-width:90%;
+  text-align:center;
+}
+.toast.show {
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* MOBILE */
+@media(max-width:800px) {
+  .site-header {height:70px;padding:0 5%}
+  .desktop-nav {display:none}
+  .wordmark {font-size:25px;letter-spacing:6px}
+  .monogram {font-size:27px}
+  .header-actions {gap:12px}
+  .header-actions .account-icon,
+  .header-actions .search-icon {display:none}
+  .mobile-toggle {display:inline-flex}
+  .hero {
+    min-height:640px;
+    height:82svh;
+    background-position:center,62% center;
+  }
+  .hero-content {padding:0 6%}
+  .hero h1 {font-size:clamp(65px,13vw,100px)}
+  .editorial-grid {gap:8px;padding:8px}
+  .editorial-card {height:220px}
+  .editorial-content {padding:15px}
+  .editorial-content h2 {font-size:22px}
+  .editorial-content p {font-size:8px}
+  .brand-story {min-height:400px}
+  .product-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}
+  .products-section {padding:55px 5%}
+  .footer-top {flex-direction:column}
+  .footer-links {gap:55px}
+}
+@media(max-width:540px) {
+  .hero {min-height:560px}
+  .hero h1 {letter-spacing:-2px}
+  .hero-description {font-size:12px}
+  .editorial-grid {grid-template-columns:1fr}
+  .editorial-card {height:185px}
+  .editorial-content h2 {font-size:29px}
+  .brand-story {
+    background-position:center,65% center;
+  }
+  .story-content {padding:70px 6%}
+  .story-content h2 {font-size:65px}
+  .section-heading h2 {font-size:49px}
+  .section-heading .eyebrow {letter-spacing:3px}
+  .view-all {font-size:9px}
+  .product-name {font-size:10px}
+  .newsletter h2 {font-size:25px;letter-spacing:4px}
+  .footer-links {gap:35px;flex-wrap:wrap}
+  .footer-bottom {flex-direction:column;gap:10px}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  *,*::before,*::after {transition:none!important}
+}
+</style>
 </head>
+
 <body>
-  <h1>BOUVRÉ</h1>
-  <p>The New Uniform.</p>
+
+<header class="site-header">
+  <a class="monogram" href="#" aria-label="BOUVRÉ home">BV</a>
+
+  <div class="header-center">
+    <a href="#" class="wordmark">BOUVRÉ</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#latest">SHOP</a>
+      <a href="#collections">COLLECTIONS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#journal">JOURNAL</a>
+    </nav>
+  </div>
+
+  <div class="header-actions">
+    <button class="icon-button search-icon" aria-label="Search" onclick="showToast('Search is coming soon')">
+      <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.5"/><path d="m16.5 16.5 5 5"/></svg>
+    </button>
+    <button class="icon-button account-icon" aria-label="Account" onclick="showToast('Accounts are coming soon')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3z"/></svg>
+    </button>
+    <button class="icon-button bag-button" aria-label="Shopping bag" onclick="showToast('Online checkout is not yet available')">
+      <svg viewBox="0 0 24 24"><path d="M3 8h18l-1.5 13h-15z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>
+      <span class="bag-count">0</span>
+    </button>
+    <button class="icon-button mobile-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#latest">SHOP</a>
+  <a href="#collections">COLLECTIONS</a>
+  <a href="#about">ABOUT</a>
+  <a href="#journal">JOURNAL</a>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">NEW COLLECTION</p>
+    <h1>THE<br>NEW UNIFORM</h1>
+    <p class="hero-description">
+      Contemporary streetwear, crafted with purpose and attitude.
+    </p>
+    <a href="#latest" class="outline-button">
+      EXPLORE COLLECTION <span>⟶</span>
+    </a>
+  </div>
+  <div class="hero-indicator" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+</section>
+
+<section class="editorial-grid" id="collections">
+
+  <a class="editorial-card" href="#latest">
+    <img src="images/essentials.png" alt="Minimalist black streetwear essentials" loading="lazy">
+    <div class="editorial-content">
+      <div>
+        <h2>ESSENTIALS</h2>
+        <p>REFINED BASICS</p>
+      </div>
+      <span class="arrow">⟶</span>
+    </div>
+  </a>
+
+  <a class="editorial-card" href="#latest">
+    <img src="images/collections.png" alt="Close-up of premium BOUVRÉ clothing" loading="lazy">
+    <div class="editorial-content">
+      <div>
+        <h2>COLLECTIONS</h2>
+        <p>SEASONAL DROPS</p>
+      </div>
+      <span class="arrow">⟶</span>
+    </div>
+  </a>
+
+  <a class="editorial-card" href="#journal">
+    <img src="images/journal.png" alt="Brutalist architectural editorial" loading="lazy">
+    <div class="editorial-content">
+      <div>
+        <h2>JOURNAL</h2>
+        <p>THE BOUVRÉ PERSPECTIVE</p>
+      </div>
+      <span class="arrow">⟶</span>
+    </div>
+  </a>
+
+</section>
+
+<section class="brand-story" id="about">
+  <div class="story-content">
+    <p class="eyebrow">THE BRAND</p>
+    <h2>BOUVRÉ</h2>
+    <p>
+      A modern streetwear house that blends contemporary
+      culture with timeless craftsmanship.
+    </p>
+    <a href="#journal" class="text-link">OUR STORY &nbsp; ⟶</a>
+  </div>
+</section>
+
+<section class="products-section" id="latest">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">FEATURED</p>
+      <h2>LATEST DROP</h2>
+    </div>
+    <a href="#productGrid" class="view-all">VIEW ALL &nbsp; ⟶</a>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <article class="product-card">
+      <div class="product-image">
+        <img src="images/hoodie.png" alt="BOUVRÉ Signature black oversized hoodie" loading="lazy">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="product-name">SIGNATURE HOODIE</p>
+          <p class="product-price">$129.00</p>
+        </div>
+        <button class="add-button" aria-label="View Signature Hoodie" onclick="productNotice('Signature Hoodie')">+</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image">
+        <img src="images/tee.png" alt="BOUVRÉ Essential ivory oversized tee" loading="lazy">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="product-name">ESSENTIAL TEE</p>
+          <p class="product-price">$69.00</p>
+        </div>
+        <button class="add-button" aria-label="View Essential Tee" onclick="productNotice('Essential Tee')">+</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image">
+        <img src="images/cargo.png" alt="BOUVRÉ black cargo pants" loading="lazy">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="product-name">CARGO PANTS</p>
+          <p class="product-price">$149.00</p>
+        </div>
+        <button class="add-button" aria-label="View Cargo Pants" onclick="productNotice('Cargo Pants')">+</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-image">
+        <img src="images/cap.png" alt="BOUVRÉ Signature black cap" loading="lazy">
+      </div>
+      <div class="product-info">
+        <div>
+          <p class="product-name">SIGNATURE CAP</p>
+          <p class="product-price">$59.00</p>
+        </div>
+        <button class="add-button" aria-label="View Signature Cap" onclick="productNotice('Signature Cap')">+</button>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="product-note">
+    Collection preview. Products, availability and prices are subject to change.
+  </p>
+</section>
+
+<section class="newsletter" id="journal">
+  <h2>STAY IN THE LOOP</h2>
+  <p>
+    Be the first to know about new collections,<br>
+    exclusive drops and brand updates.
+  </p>
+  <form class="newsletter-form" id="newsletterForm">
+    <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required>
+    <button type="submit" aria-label="Join mailing list">⟶</button>
+  </form>
+  <p class="form-message" id="formMessage" aria-live="polite"></p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="wordmark">BOUVRÉ</span>
+      <p>THE NEW UNIFORM.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h3>EXPLORE</h3>
+        <a href="#latest">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Our Maison</a>
+      </div>
+      <div>
+        <h3>INFORMATION</h3>
+        <a href="mailto:contact@bouvre.com">Contact</a>
+        <a href="#journal">Journal</a>
+        <a href="#latest">Latest Drop</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> BOUVRÉ. ALL RIGHTS RESERVED.</span>
+    <span>CONTEMPORARY LUXURY STREETWEAR</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const yearElement = document.getElementById("year");
+yearElement.textContent = new Date().getFullYear();
+
+let toastTimeout;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3200);
+}
+
+function toggleMenu(button) {
+  const menu = document.getElementById("mobileMenu");
+  const isOpen = menu.classList.toggle("open");
+  button.setAttribute("aria-expanded", String(isOpen));
+}
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileMenu").classList.remove("open");
+    document.querySelector(".mobile-toggle")
+      .setAttribute("aria-expanded", "false");
+  });
+});
+
+function productNotice(product) {
+  showToast(product + " — product details coming soon");
+}
+
+document.getElementById("newsletterForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("formMessage").textContent =
+      "Newsletter registration is coming soon.";
+    showToast("Mailing list is not yet active");
+  });
+</script>
+
 </body>
 </html>
