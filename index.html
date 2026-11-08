@@ -10,6 +10,7 @@
 
 <link rel="icon" href="bv-logo.png" type="image/png">
 <link rel="apple-touch-icon" href="bv-logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,7 +38,10 @@ a {color:inherit;text-decoration:none}
 button,input {font:inherit}
 button {cursor:pointer}
 img {display:block;max-width:100%}
-.serif {font-family:"Cormorant Garamond",Georgia,serif}
+
+.serif {
+  font-family:"Cormorant Garamond",Georgia,serif;
+}
 
 .eyebrow {
   font-size:10px;
@@ -104,7 +108,9 @@ img {display:block;max-width:100%}
 }
 
 .desktop-nav a:hover,
-.footer a:hover {opacity:.65}
+.footer a:hover {
+  opacity:.65;
+}
 
 .header-actions {
   display:flex;
@@ -132,7 +138,9 @@ img {display:block;max-width:100%}
 }
 
 .mobile-toggle,
-.mobile-menu {display:none}
+.mobile-menu {
+  display:none;
+}
 
 /* MAIN HERO */
 
@@ -281,7 +289,9 @@ img {display:block;max-width:100%}
   margin:0;
 }
 
-.arrow {font-size:25px}
+.arrow {
+  font-size:25px;
+}
 
 /* BRAND STORY */
 
@@ -331,7 +341,7 @@ img {display:block;max-width:100%}
   padding-bottom:6px;
 }
 
-/* LATEST DROP */
+/* PRODUCTS */
 
 .products-section {
   background:var(--ivory);
@@ -354,7 +364,9 @@ img {display:block;max-width:100%}
   margin:7px 0 0;
 }
 
-.section-heading .eyebrow {margin:0}
+.section-heading .eyebrow {
+  margin:0;
+}
 
 .view-all {
   font-size:11px;
@@ -366,6 +378,11 @@ img {display:block;max-width:100%}
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:28px 18px;
+}
+
+.product-card {
+  display:block;
+  min-width:0;
 }
 
 .product-image {
@@ -410,6 +427,7 @@ img {display:block;max-width:100%}
   font-size:25px;
   color:#111;
   line-height:1;
+  flex-shrink:0;
 }
 
 .product-note {
@@ -478,7 +496,9 @@ img {display:block;max-width:100%}
   font-size:24px;
 }
 
-.form-message {min-height:20px}
+.form-message {
+  min-height:20px;
+}
 
 /* FOOTER */
 
@@ -535,7 +555,7 @@ img {display:block;max-width:100%}
   letter-spacing:1px;
 }
 
-/* NOTIFICATIONS */
+/* NOTIFICATION */
 
 .toast {
   position:fixed;
@@ -559,7 +579,7 @@ img {display:block;max-width:100%}
   transform:translate(-50%,0);
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:800px) {
   .site-header {
@@ -577,10 +597,22 @@ img {display:block;max-width:100%}
     letter-spacing:6px;
   }
 
-  .desktop-nav {display:none}
-  .header-actions {gap:12px}
-  .search-icon,.account-icon {display:none}
-  .mobile-toggle {display:flex}
+  .desktop-nav {
+    display:none;
+  }
+
+  .header-actions {
+    gap:12px;
+  }
+
+  .search-icon,
+  .account-icon {
+    display:none;
+  }
+
+  .mobile-toggle {
+    display:flex;
+  }
 
   .mobile-menu.open {
     display:flex;
@@ -602,7 +634,9 @@ img {display:block;max-width:100%}
     background-position:62% center;
   }
 
-  .hero-content {padding:0 6%}
+  .hero-content {
+    padding:0 6%;
+  }
 
   .hero h1 {
     font-size:clamp(65px,12vw,100px);
@@ -613,18 +647,34 @@ img {display:block;max-width:100%}
     padding:8px;
   }
 
-  .editorial-card {height:220px}
-  .editorial-content {padding:15px}
-  .editorial-content h2 {font-size:22px}
-  .editorial-content p {font-size:8px}
+  .editorial-card {
+    height:220px;
+  }
+
+  .editorial-content {
+    padding:15px;
+  }
+
+  .editorial-content h2 {
+    font-size:22px;
+  }
+
+  .editorial-content p {
+    font-size:8px;
+  }
 
   .product-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:25px 12px;
   }
 
-  .products-section {padding:55px 5%}
-  .footer-top {flex-direction:column}
+  .products-section {
+    padding:55px 5%;
+  }
+
+  .footer-top {
+    flex-direction:column;
+  }
 }
 
 @media(max-width:540px) {
@@ -638,30 +688,77 @@ img {display:block;max-width:100%}
     letter-spacing:5px;
   }
 
-  .hero {min-height:560px}
-  .hero h1 {letter-spacing:-2px}
-  .hero-description {font-size:12px}
+  .hero {
+    min-height:560px;
+  }
+
+  .hero h1 {
+    letter-spacing:-2px;
+  }
+
+  .hero-description {
+    font-size:12px;
+  }
 
   .editorial-grid {
     grid-template-columns:1fr;
   }
 
-  .editorial-card {height:185px}
-  .editorial-content h2 {font-size:29px}
-  .story-content {padding:70px 6%}
-  .story-content h2 {font-size:65px}
-  .section-heading h2 {font-size:49px}
-  .section-heading .eyebrow {letter-spacing:3px}
-  .view-all {font-size:9px}
-  .product-name {font-size:10px}
-  .newsletter h2 {font-size:25px;letter-spacing:4px}
-  .footer-links {gap:35px;flex-wrap:wrap}
-  .footer-bottom {flex-direction:column}
+  .editorial-card {
+    height:185px;
+  }
+
+  .editorial-content h2 {
+    font-size:29px;
+  }
+
+  .story-content {
+    padding:70px 6%;
+  }
+
+  .story-content h2 {
+    font-size:65px;
+  }
+
+  .section-heading h2 {
+    font-size:49px;
+  }
+
+  .section-heading .eyebrow {
+    letter-spacing:3px;
+  }
+
+  .view-all {
+    font-size:9px;
+  }
+
+  .product-name {
+    font-size:10px;
+  }
+
+  .newsletter h2 {
+    font-size:25px;
+    letter-spacing:4px;
+  }
+
+  .footer-links {
+    gap:35px;
+    flex-wrap:wrap;
+  }
+
+  .footer-bottom {
+    flex-direction:column;
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  html {scroll-behavior:auto}
-  *,*:before,*:after {transition:none!important}
+  html {
+    scroll-behavior:auto;
+  }
+
+  *,*:before,*:after {
+    transition:none!important;
+  }
 }
 </style>
 </head>
@@ -751,6 +848,7 @@ img {display:block;max-width:100%}
 <!-- HERO -->
 
 <section class="hero">
+
   <div class="hero-content">
     <p class="eyebrow">NEW COLLECTION</p>
 
@@ -773,6 +871,7 @@ img {display:block;max-width:100%}
     <span></span>
     <span></span>
   </div>
+
 </section>
 
 <!-- EDITORIAL COLLECTIONS -->
@@ -838,6 +937,7 @@ img {display:block;max-width:100%}
 <!-- BRAND STORY -->
 
 <section class="brand-story" id="about">
+
   <div class="story-content">
     <p class="eyebrow">THE BRAND</p>
 
@@ -852,9 +952,10 @@ img {display:block;max-width:100%}
       OUR STORY &nbsp; ⟶
     </a>
   </div>
+
 </section>
 
-<!-- SHOPIFY CONNECTED PRODUCT SECTION -->
+<!-- FEATURED PRODUCTS -->
 
 <section class="products-section" id="latest">
 
@@ -874,16 +975,16 @@ img {display:block;max-width:100%}
 
   <div class="product-grid" id="productGrid">
 
-    <!-- HOODIE 001 -->
+    <!-- SIGNATURE HOODIE 001 -->
 
     <a
       class="product-card"
-      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Hoodie%20001&amp;type=product"
+      href="https://p5ntdz-6g.myshopify.com/products/bouvre-signature-hoodie-001-bv-edition"
     >
       <div class="product-image">
         <img
           src="images/hoodie.png"
-          alt="BOUVRÉ Signature Hoodie 001"
+          alt="BOUVRÉ Signature Hoodie 001 BV Edition"
           loading="lazy"
         >
       </div>
@@ -895,20 +996,21 @@ img {display:block;max-width:100%}
           </p>
           <p class="product-price">S$79.90</p>
         </div>
-        <span class="add-button">↗</span>
+
+        <span class="add-button" aria-hidden="true">↗</span>
       </div>
     </a>
 
-    <!-- HOODIE 002 -->
+    <!-- SIGNATURE HOODIE 002 -->
 
     <a
       class="product-card"
-      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Hoodie%20002&amp;type=product"
+      href="https://p5ntdz-6g.myshopify.com/products/unisex-hoodiebouvre-signature-hoodie-002-bv-wordmark-edition"
     >
       <div class="product-image">
         <img
           src="images/hoodie.png"
-          alt="BOUVRÉ Signature Hoodie 002"
+          alt="BOUVRÉ Signature Hoodie 002 BV and Wordmark Edition"
           loading="lazy"
         >
       </div>
@@ -920,20 +1022,21 @@ img {display:block;max-width:100%}
           </p>
           <p class="product-price">S$89.90</p>
         </div>
-        <span class="add-button">↗</span>
+
+        <span class="add-button" aria-hidden="true">↗</span>
       </div>
     </a>
 
-    <!-- TEE 001 -->
+    <!-- ESSENTIAL TEE 001 -->
 
     <a
       class="product-card"
-      href="https://p5ntdz-6g.myshopify.com/search?q=Essential%20Tee%20001&amp;type=product"
+      href="https://p5ntdz-6g.myshopify.com/products/bouvre-essential-tee-001-bv-edition"
     >
       <div class="product-image">
         <img
           src="images/tee.png"
-          alt="BOUVRÉ Essential Tee 001"
+          alt="BOUVRÉ Essential Tee 001 BV Edition"
           loading="lazy"
         >
       </div>
@@ -945,20 +1048,21 @@ img {display:block;max-width:100%}
           </p>
           <p class="product-price">S$39.90</p>
         </div>
-        <span class="add-button">↗</span>
+
+        <span class="add-button" aria-hidden="true">↗</span>
       </div>
     </a>
 
-    <!-- TEE 002 -->
+    <!-- ESSENTIAL TEE 002 -->
 
     <a
       class="product-card"
-      href="https://p5ntdz-6g.myshopify.com/search?q=Essential%20Tee%20002&amp;type=product"
+      href="https://p5ntdz-6g.myshopify.com/products/bouvre-essential-tee-002-bv-wordmark-edition"
     >
       <div class="product-image">
         <img
           src="images/tee.png"
-          alt="BOUVRÉ Essential Tee 002"
+          alt="BOUVRÉ Essential Tee 002 BV and Wordmark Edition"
           loading="lazy"
         >
       </div>
@@ -970,20 +1074,21 @@ img {display:block;max-width:100%}
           </p>
           <p class="product-price">S$44.90</p>
         </div>
-        <span class="add-button">↗</span>
+
+        <span class="add-button" aria-hidden="true">↗</span>
       </div>
     </a>
 
-    <!-- CAP 001 -->
+    <!-- SIGNATURE CAP 001 -->
 
     <a
       class="product-card"
-      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Cap%20001&amp;type=product"
+      href="https://p5ntdz-6g.myshopify.com/products/bouvre-signature-cap-001-bv-edition"
     >
       <div class="product-image">
         <img
           src="images/cap.png"
-          alt="BOUVRÉ Signature Cap 001"
+          alt="BOUVRÉ Signature Cap 001 BV Edition"
           loading="lazy"
         >
       </div>
@@ -995,20 +1100,21 @@ img {display:block;max-width:100%}
           </p>
           <p class="product-price">S$34.90</p>
         </div>
-        <span class="add-button">↗</span>
+
+        <span class="add-button" aria-hidden="true">↗</span>
       </div>
     </a>
 
-    <!-- CAP 002 -->
+    <!-- SIGNATURE CAP 002 -->
 
     <a
       class="product-card"
-      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Cap%20002&amp;type=product"
+      href="https://p5ntdz-6g.myshopify.com/products/bouvre-signature-cap-002-wordmark-edition"
     >
       <div class="product-image">
         <img
           src="images/cap.png"
-          alt="BOUVRÉ Signature Cap 002"
+          alt="BOUVRÉ Signature Cap 002 Wordmark Edition"
           loading="lazy"
         >
       </div>
@@ -1020,7 +1126,8 @@ img {display:block;max-width:100%}
           </p>
           <p class="product-price">S$34.90</p>
         </div>
-        <span class="add-button">↗</span>
+
+        <span class="add-button" aria-hidden="true">↗</span>
       </div>
     </a>
 
@@ -1046,15 +1153,18 @@ img {display:block;max-width:100%}
   </p>
 
   <form class="newsletter-form" id="newsletterForm">
+
     <input
       type="email"
       placeholder="Enter your email"
       aria-label="Email address"
       required
     >
+
     <button type="submit" aria-label="Join mailing list">
       ⟶
     </button>
+
   </form>
 
   <p
@@ -1087,17 +1197,21 @@ img {display:block;max-width:100%}
           Shop
         </a>
 
-        <a href="https://p5ntdz-6g.myshopify.com/collections/all">
+        <a href="#collections">
           Collections
         </a>
 
-        <a href="#about">Our Maison</a>
+        <a href="#about">
+          Our Maison
+        </a>
       </div>
 
       <div>
         <h3>INFORMATION</h3>
 
-        <a href="#journal">Journal</a>
+        <a href="#journal">
+          Journal
+        </a>
 
         <a href="https://p5ntdz-6g.myshopify.com/collections/all">
           Latest Drop
@@ -1112,15 +1226,21 @@ img {display:block;max-width:100%}
   </div>
 
   <div class="footer-bottom">
+
     <span>
       © <span id="year"></span> BOUVRÉ.
       ALL RIGHTS RESERVED.
     </span>
 
-    <span>CONTEMPORARY LUXURY STREETWEAR</span>
+    <span>
+      CONTEMPORARY LUXURY STREETWEAR
+    </span>
+
   </div>
 
 </footer>
+
+<!-- NOTIFICATION -->
 
 <div
   class="toast"
