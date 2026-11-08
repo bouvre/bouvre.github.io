@@ -1,0 +1,1186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="BOUVRÉ — Contemporary luxury streetwear. The New Uniform.">
+<title>BOUVRÉ | The New Uniform</title>
+
+<link rel="icon" href="bv-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="bv-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#090909;
+  --ivory:#eee9e0;
+  --cream:#e7ded1;
+  --muted:#bdb6ad;
+}
+
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+
+body {
+  margin:0;
+  background:var(--black);
+  color:#f6f2ec;
+  font-family:"DM Sans",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+a {color:inherit;text-decoration:none}
+button,input {font:inherit}
+button {cursor:pointer}
+img {display:block;max-width:100%}
+.serif {font-family:"Cormorant Garamond",Georgia,serif}
+
+.eyebrow {
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+}
+
+/* HEADER */
+
+.site-header {
+  position:relative;
+  z-index:20;
+  height:78px;
+  background:#090909;
+  border-bottom:1px solid #252525;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 4%;
+}
+
+.monogram {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:58px;
+  height:58px;
+  flex-shrink:0;
+}
+
+.monogram img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.header-center {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+}
+
+.wordmark {
+  display:block;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:30px;
+  font-weight:500;
+  letter-spacing:9px;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.desktop-nav {
+  display:flex;
+  justify-content:center;
+  gap:34px;
+  margin-top:11px;
+}
+
+.desktop-nav a {
+  font-size:10px;
+  letter-spacing:1.2px;
+}
+
+.desktop-nav a:hover,
+.footer a:hover {opacity:.65}
+
+.header-actions {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.icon-button {
+  background:none;
+  color:inherit;
+  border:0;
+  padding:4px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.icon-button svg {
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.5;
+}
+
+.mobile-toggle,
+.mobile-menu {display:none}
+
+/* MAIN HERO */
+
+.hero {
+  position:relative;
+  min-height:620px;
+  height:78vh;
+  max-height:950px;
+  display:flex;
+  align-items:center;
+  background-color:#211e1c;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.85),
+      rgba(0,0,0,.45) 48%,
+      rgba(0,0,0,.04)
+    ),
+    url("images/hero.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding:0 4.5%;
+}
+
+.hero h1 {
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-style:italic;
+  font-size:clamp(70px,9vw,145px);
+  font-weight:400;
+  letter-spacing:-4px;
+  line-height:.79;
+  margin:32px 0;
+}
+
+.hero-description {
+  font-size:14px;
+  line-height:1.7;
+  max-width:310px;
+  color:#e2ddd6;
+  margin-bottom:30px;
+}
+
+.outline-button {
+  display:inline-flex;
+  gap:30px;
+  align-items:center;
+  padding:15px 22px;
+  border:1px solid #bcb8b3;
+  background:transparent;
+  color:white;
+  font-size:11px;
+  letter-spacing:1px;
+  transition:.25s;
+}
+
+.outline-button:hover {
+  background:white;
+  color:black;
+}
+
+.hero-indicator {
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:7px;
+}
+
+.hero-indicator span {
+  width:25px;
+  height:2px;
+  background:#777;
+}
+
+.hero-indicator span:first-child {
+  background:white;
+}
+
+/* EDITORIAL PANELS */
+
+.editorial-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  padding:12px;
+}
+
+.editorial-card {
+  height:250px;
+  position:relative;
+  overflow:hidden;
+  background:#242321;
+  display:flex;
+  align-items:flex-end;
+}
+
+.editorial-card img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s;
+}
+
+.editorial-card:hover img {
+  transform:scale(1.06);
+}
+
+.editorial-card:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    transparent 25%,
+    rgba(0,0,0,.82)
+  );
+}
+
+.editorial-content {
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:26px;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+}
+
+.editorial-content h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  font-weight:400;
+  margin:0 0 5px;
+}
+
+.editorial-content p {
+  font-size:10px;
+  letter-spacing:1px;
+  margin:0;
+}
+
+.arrow {font-size:25px}
+
+/* BRAND STORY */
+
+.brand-story {
+  position:relative;
+  min-height:400px;
+  display:flex;
+  align-items:center;
+  background-color:#1b1a19;
+  background-image:
+    linear-gradient(
+      90deg,
+      #090909 0%,
+      rgba(0,0,0,.93) 32%,
+      rgba(0,0,0,.1)
+    ),
+    url("images/story.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.story-content {
+  padding:70px 6%;
+  max-width:560px;
+}
+
+.story-content h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(60px,7vw,100px);
+  font-weight:400;
+  line-height:1;
+  margin:15px 0;
+}
+
+.story-content p:not(.eyebrow) {
+  font-size:14px;
+  line-height:1.8;
+  color:#d2cdc7;
+}
+
+.text-link {
+  display:inline-block;
+  margin-top:22px;
+  font-size:12px;
+  letter-spacing:1px;
+  border-bottom:1px solid;
+  padding-bottom:6px;
+}
+
+/* LATEST DROP */
+
+.products-section {
+  background:var(--ivory);
+  color:#111;
+  padding:65px 4.5% 75px;
+}
+
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:26px;
+}
+
+.section-heading h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(48px,6vw,78px);
+  font-weight:400;
+  line-height:1;
+  margin:7px 0 0;
+}
+
+.section-heading .eyebrow {margin:0}
+
+.view-all {
+  font-size:11px;
+  letter-spacing:1px;
+  padding-bottom:8px;
+}
+
+.product-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px 18px;
+}
+
+.product-image {
+  aspect-ratio:3/4;
+  background:#bcb6af;
+  overflow:hidden;
+}
+
+.product-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.product-card:hover img {
+  transform:scale(1.04);
+}
+
+.product-info {
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  padding-top:13px;
+}
+
+.product-name {
+  font-size:11px;
+  letter-spacing:.5px;
+  line-height:1.6;
+  margin:0 0 6px;
+}
+
+.product-price {
+  font-size:12px;
+  margin:0;
+}
+
+.add-button {
+  border:0;
+  background:none;
+  font-size:25px;
+  color:#111;
+  line-height:1;
+}
+
+.product-note {
+  font-size:11px;
+  color:#666;
+  margin-top:25px;
+  line-height:1.7;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+  text-align:center;
+  padding:85px 20px 100px;
+  background:
+    radial-gradient(
+      ellipse at 5% 100%,
+      #383533,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 95% 0%,
+      #292727,
+      transparent 45%
+    ),
+    #090909;
+}
+
+.newsletter h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:34px;
+  font-weight:400;
+  letter-spacing:7px;
+  margin:0 0 15px;
+}
+
+.newsletter p {
+  font-size:12px;
+  color:#bbb5ae;
+  line-height:1.8;
+}
+
+.newsletter-form {
+  display:flex;
+  max-width:430px;
+  margin:30px auto 0;
+  border:1px solid #777;
+}
+
+.newsletter-form input {
+  flex:1;
+  min-width:0;
+  background:transparent;
+  border:0;
+  outline:none;
+  padding:17px;
+  color:white;
+  font-size:12px;
+}
+
+.newsletter-form button {
+  background:none;
+  border:0;
+  color:white;
+  padding:0 20px;
+  font-size:24px;
+}
+
+.form-message {min-height:20px}
+
+/* FOOTER */
+
+.footer {
+  background:#080808;
+  border-top:1px solid #292929;
+  padding:55px 5% 25px;
+}
+
+.footer-top {
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+}
+
+.footer-brand .wordmark {
+  font-size:30px;
+}
+
+.footer-brand p {
+  font-size:11px;
+  color:#aaa;
+  margin-top:18px;
+}
+
+.footer-links {
+  display:flex;
+  gap:75px;
+}
+
+.footer-links h3 {
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:500;
+  margin:0 0 20px;
+}
+
+.footer-links a {
+  display:block;
+  font-size:12px;
+  color:#aaa;
+  margin-bottom:13px;
+}
+
+.footer-bottom {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  border-top:1px solid #292929;
+  margin-top:65px;
+  padding-top:22px;
+  font-size:10px;
+  color:#888;
+  letter-spacing:1px;
+}
+
+/* NOTIFICATIONS */
+
+.toast {
+  position:fixed;
+  z-index:100;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,30px);
+  background:var(--ivory);
+  color:#111;
+  padding:15px 25px;
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  text-align:center;
+  max-width:90%;
+}
+
+.toast.show {
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px) {
+  .site-header {
+    height:70px;
+    padding:0 5%;
+  }
+
+  .monogram {
+    width:48px;
+    height:48px;
+  }
+
+  .wordmark {
+    font-size:25px;
+    letter-spacing:6px;
+  }
+
+  .desktop-nav {display:none}
+  .header-actions {gap:12px}
+  .search-icon,.account-icon {display:none}
+  .mobile-toggle {display:flex}
+
+  .mobile-menu.open {
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    padding:25px 6%;
+    background:#111;
+    border-bottom:1px solid #333;
+  }
+
+  .mobile-menu a {
+    font-size:12px;
+    letter-spacing:2px;
+  }
+
+  .hero {
+    min-height:620px;
+    height:82svh;
+    background-position:62% center;
+  }
+
+  .hero-content {padding:0 6%}
+
+  .hero h1 {
+    font-size:clamp(65px,12vw,100px);
+  }
+
+  .editorial-grid {
+    gap:8px;
+    padding:8px;
+  }
+
+  .editorial-card {height:220px}
+  .editorial-content {padding:15px}
+  .editorial-content h2 {font-size:22px}
+  .editorial-content p {font-size:8px}
+
+  .product-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:25px 12px;
+  }
+
+  .products-section {padding:55px 5%}
+  .footer-top {flex-direction:column}
+}
+
+@media(max-width:540px) {
+  .monogram {
+    width:43px;
+    height:43px;
+  }
+
+  .wordmark {
+    font-size:23px;
+    letter-spacing:5px;
+  }
+
+  .hero {min-height:560px}
+  .hero h1 {letter-spacing:-2px}
+  .hero-description {font-size:12px}
+
+  .editorial-grid {
+    grid-template-columns:1fr;
+  }
+
+  .editorial-card {height:185px}
+  .editorial-content h2 {font-size:29px}
+  .story-content {padding:70px 6%}
+  .story-content h2 {font-size:65px}
+  .section-heading h2 {font-size:49px}
+  .section-heading .eyebrow {letter-spacing:3px}
+  .view-all {font-size:9px}
+  .product-name {font-size:10px}
+  .newsletter h2 {font-size:25px;letter-spacing:4px}
+  .footer-links {gap:35px;flex-wrap:wrap}
+  .footer-bottom {flex-direction:column}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  *,*:before,*:after {transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+  <a class="monogram" href="/" aria-label="BOUVRÉ homepage">
+    <img src="bv-logo.png" alt="BOUVRÉ BV monogram">
+  </a>
+
+  <div class="header-center">
+    <a href="/" class="wordmark">BOUVRÉ</a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="https://p5ntdz-6g.myshopify.com/collections/all">SHOP</a>
+      <a href="#collections">COLLECTIONS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#journal">JOURNAL</a>
+    </nav>
+  </div>
+
+  <div class="header-actions">
+
+    <a
+      class="icon-button search-icon"
+      href="https://p5ntdz-6g.myshopify.com/search"
+      aria-label="Search products"
+    >
+      <svg viewBox="0 0 24 24">
+        <circle cx="10.8" cy="10.8" r="7.5"/>
+        <path d="m16.5 16.5 5 5"/>
+      </svg>
+    </a>
+
+    <a
+      class="icon-button account-icon"
+      href="https://p5ntdz-6g.myshopify.com/account"
+      aria-label="Customer account"
+    >
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 22v-3a8 8 0 0 1 16 0v3z"/>
+      </svg>
+    </a>
+
+    <a
+      class="icon-button bag-button"
+      href="https://p5ntdz-6g.myshopify.com/cart"
+      aria-label="Shopping bag"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d="M3 8h18l-1.5 13h-15z"/>
+        <path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+      </svg>
+    </a>
+
+    <button
+      class="icon-button mobile-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+      onclick="toggleMenu(this)"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d="M3 7h18M3 12h18M3 17h18"/>
+      </svg>
+    </button>
+
+  </div>
+</header>
+
+<!-- MOBILE NAVIGATION -->
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="https://p5ntdz-6g.myshopify.com/collections/all">SHOP</a>
+  <a href="#collections">COLLECTIONS</a>
+  <a href="#about">ABOUT</a>
+  <a href="#journal">JOURNAL</a>
+</nav>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">NEW COLLECTION</p>
+
+    <h1>THE<br>NEW UNIFORM</h1>
+
+    <p class="hero-description">
+      Contemporary streetwear, crafted with purpose and attitude.
+    </p>
+
+    <a
+      href="https://p5ntdz-6g.myshopify.com/collections/all"
+      class="outline-button"
+    >
+      EXPLORE COLLECTION <span>⟶</span>
+    </a>
+  </div>
+
+  <div class="hero-indicator" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+
+<!-- EDITORIAL COLLECTIONS -->
+
+<section class="editorial-grid" id="collections">
+
+  <a
+    class="editorial-card"
+    href="https://p5ntdz-6g.myshopify.com/collections/all"
+  >
+    <img
+      src="images/essentials.png"
+      alt="BOUVRÉ minimalist streetwear essentials"
+      loading="lazy"
+    >
+
+    <div class="editorial-content">
+      <div>
+        <h2>ESSENTIALS</h2>
+        <p>REFINED BASICS</p>
+      </div>
+      <span class="arrow">⟶</span>
+    </div>
+  </a>
+
+  <a
+    class="editorial-card"
+    href="https://p5ntdz-6g.myshopify.com/collections/all"
+  >
+    <img
+      src="images/collections.png"
+      alt="Premium BOUVRÉ clothing details"
+      loading="lazy"
+    >
+
+    <div class="editorial-content">
+      <div>
+        <h2>COLLECTIONS</h2>
+        <p>SEASONAL DROPS</p>
+      </div>
+      <span class="arrow">⟶</span>
+    </div>
+  </a>
+
+  <a class="editorial-card" href="#journal">
+    <img
+      src="images/journal.png"
+      alt="BOUVRÉ architectural editorial"
+      loading="lazy"
+    >
+
+    <div class="editorial-content">
+      <div>
+        <h2>JOURNAL</h2>
+        <p>THE BOUVRÉ PERSPECTIVE</p>
+      </div>
+      <span class="arrow">⟶</span>
+    </div>
+  </a>
+
+</section>
+
+<!-- BRAND STORY -->
+
+<section class="brand-story" id="about">
+  <div class="story-content">
+    <p class="eyebrow">THE BRAND</p>
+
+    <h2>BOUVRÉ</h2>
+
+    <p>
+      A modern streetwear house that blends contemporary
+      culture with timeless craftsmanship.
+    </p>
+
+    <a href="#about" class="text-link">
+      OUR STORY &nbsp; ⟶
+    </a>
+  </div>
+</section>
+
+<!-- SHOPIFY CONNECTED PRODUCT SECTION -->
+
+<section class="products-section" id="latest">
+
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">FEATURED</p>
+      <h2>LATEST DROP</h2>
+    </div>
+
+    <a
+      href="https://p5ntdz-6g.myshopify.com/collections/all"
+      class="view-all"
+    >
+      VIEW ALL &nbsp; ⟶
+    </a>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <!-- HOODIE 001 -->
+
+    <a
+      class="product-card"
+      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Hoodie%20001&amp;type=product"
+    >
+      <div class="product-image">
+        <img
+          src="images/hoodie.png"
+          alt="BOUVRÉ Signature Hoodie 001"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+        <div>
+          <p class="product-name">
+            SIGNATURE HOODIE 001 · BV EDITION
+          </p>
+          <p class="product-price">S$79.90</p>
+        </div>
+        <span class="add-button">↗</span>
+      </div>
+    </a>
+
+    <!-- HOODIE 002 -->
+
+    <a
+      class="product-card"
+      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Hoodie%20002&amp;type=product"
+    >
+      <div class="product-image">
+        <img
+          src="images/hoodie.png"
+          alt="BOUVRÉ Signature Hoodie 002"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+        <div>
+          <p class="product-name">
+            SIGNATURE HOODIE 002 · BV + WORDMARK
+          </p>
+          <p class="product-price">S$89.90</p>
+        </div>
+        <span class="add-button">↗</span>
+      </div>
+    </a>
+
+    <!-- TEE 001 -->
+
+    <a
+      class="product-card"
+      href="https://p5ntdz-6g.myshopify.com/search?q=Essential%20Tee%20001&amp;type=product"
+    >
+      <div class="product-image">
+        <img
+          src="images/tee.png"
+          alt="BOUVRÉ Essential Tee 001"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+        <div>
+          <p class="product-name">
+            ESSENTIAL TEE 001 · BV EDITION
+          </p>
+          <p class="product-price">S$39.90</p>
+        </div>
+        <span class="add-button">↗</span>
+      </div>
+    </a>
+
+    <!-- TEE 002 -->
+
+    <a
+      class="product-card"
+      href="https://p5ntdz-6g.myshopify.com/search?q=Essential%20Tee%20002&amp;type=product"
+    >
+      <div class="product-image">
+        <img
+          src="images/tee.png"
+          alt="BOUVRÉ Essential Tee 002"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+        <div>
+          <p class="product-name">
+            ESSENTIAL TEE 002 · BV + WORDMARK
+          </p>
+          <p class="product-price">S$44.90</p>
+        </div>
+        <span class="add-button">↗</span>
+      </div>
+    </a>
+
+    <!-- CAP 001 -->
+
+    <a
+      class="product-card"
+      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Cap%20001&amp;type=product"
+    >
+      <div class="product-image">
+        <img
+          src="images/cap.png"
+          alt="BOUVRÉ Signature Cap 001"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+        <div>
+          <p class="product-name">
+            SIGNATURE CAP 001 · BV EDITION
+          </p>
+          <p class="product-price">S$34.90</p>
+        </div>
+        <span class="add-button">↗</span>
+      </div>
+    </a>
+
+    <!-- CAP 002 -->
+
+    <a
+      class="product-card"
+      href="https://p5ntdz-6g.myshopify.com/search?q=Signature%20Cap%20002&amp;type=product"
+    >
+      <div class="product-image">
+        <img
+          src="images/cap.png"
+          alt="BOUVRÉ Signature Cap 002"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+        <div>
+          <p class="product-name">
+            SIGNATURE CAP 002 · WORDMARK
+          </p>
+          <p class="product-price">S$34.90</p>
+        </div>
+        <span class="add-button">↗</span>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="product-note">
+    Product images are editorial previews.
+    Select colours and sizes and confirm live prices
+    and availability in our Shopify store.
+  </p>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter" id="journal">
+
+  <h2>STAY IN THE LOOP</h2>
+
+  <p>
+    Be the first to know about new collections,<br>
+    exclusive drops and brand updates.
+  </p>
+
+  <form class="newsletter-form" id="newsletterForm">
+    <input
+      type="email"
+      placeholder="Enter your email"
+      aria-label="Email address"
+      required
+    >
+    <button type="submit" aria-label="Join mailing list">
+      ⟶
+    </button>
+  </form>
+
+  <p
+    class="form-message"
+    id="formMessage"
+    aria-live="polite"
+  ></p>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <span class="wordmark">BOUVRÉ</span>
+      <p>THE NEW UNIFORM.</p>
+    </div>
+
+    <div class="footer-links">
+
+      <div>
+        <h3>EXPLORE</h3>
+
+        <a href="https://p5ntdz-6g.myshopify.com/collections/all">
+          Shop
+        </a>
+
+        <a href="https://p5ntdz-6g.myshopify.com/collections/all">
+          Collections
+        </a>
+
+        <a href="#about">Our Maison</a>
+      </div>
+
+      <div>
+        <h3>INFORMATION</h3>
+
+        <a href="#journal">Journal</a>
+
+        <a href="https://p5ntdz-6g.myshopify.com/collections/all">
+          Latest Drop
+        </a>
+
+        <a href="https://p5ntdz-6g.myshopify.com/cart">
+          Shopping Bag
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>
+      © <span id="year"></span> BOUVRÉ.
+      ALL RIGHTS RESERVED.
+    </span>
+
+    <span>CONTEMPORARY LUXURY STREETWEAR</span>
+  </div>
+
+</footer>
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite"
+></div>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+let toastTimeout;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3200);
+}
+
+function toggleMenu(button) {
+  const menu = document.getElementById("mobileMenu");
+
+  const isOpen = menu.classList.toggle("open");
+
+  button.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+}
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document
+      .getElementById("mobileMenu")
+      .classList.remove("open");
+
+    document
+      .querySelector(".mobile-toggle")
+      .setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("newsletterForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("formMessage").textContent =
+      "Newsletter sign-up is not yet available. Please check back soon.";
+
+    showToast("Mailing list is not yet active");
+  });
+</script>
+
+</body>
+</html>
